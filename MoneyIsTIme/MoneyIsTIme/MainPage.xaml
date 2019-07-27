@@ -2,13 +2,24 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MoneyIsTIme"
-             x:Class="MoneyIsTIme.MainPage">
-
-    <StackLayout>
+             x:Class="MoneyIsTIme.MainPage"
+             >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "*" />
+            <RowDefinition Height = "*" />
+            <RowDefinition Height = "*" />
+            <RowDefinition Height = "*" />
+            <RowDefinition Height = "*" />
+            <RowDefinition Height = "*" />
+            <RowDefinition Height = "*" />
+            <RowDefinition Height = "*" />
+        </Grid.RowDefinitions>
+        <Entry  Placeholder="Hourly wage" Text="{Binding HourlyWage, Mode=TwoWay}" Grid.Row="1" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalOptions="FillAndExpand" FontSize="Large"/>
+        <Entry  Placeholder="Cost of purchase" Text="{Binding PurchaseCost, Mode=TwoWay}" Grid.Row="2" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalOptions="FillAndExpand" FontSize="Large"/>
+        <Label Text="{Binding HoursOfWork}" Grid.Row="3" Grid.RowSpan="5" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalOptions="FillAndExpand" FontSize="100"/>
+        
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    </Grid>
 
 </ContentPage>
