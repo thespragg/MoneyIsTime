@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace MoneyIsTIme.Models
+namespace MoneyIsTime.Models
 {
     public class HoursToWorkViewModel : INotifyPropertyChanged
     {
@@ -12,8 +12,8 @@ namespace MoneyIsTIme.Models
         public float HourlyWage {
             get => hourlyWage;
             set {
-                CalculateHours();
                 hourlyWage = value;
+                CalculateHours();
                 NotifyPropertyChanged("");
             }
         }
@@ -23,27 +23,50 @@ namespace MoneyIsTIme.Models
             get => purchaseCost;
             set
             {
-                CalculateHours();
                 purchaseCost = value;
+                CalculateHours();
                 NotifyPropertyChanged("");
             }
         }
-        public float HoursOfWork { get; set; }
+        public string HoursOfWork { get; set; }
 
+        public int Modifier { get; set; }
+        public string Unit { get; set; }
         public HoursToWorkViewModel()
         {
-            PurchaseCost = 0;
-            HourlyWage = 0;
-            HoursOfWork = 1;
+            HoursOfWork = "0.0";
+            Modifier = 60;
+            Unit = "Hours";
         }
 
         public void CalculateHours()
         {
             if (HourlyWage == 0 || PurchaseCost == 0) return;
-            HoursOfWork = PurchaseCost / HourlyWage;
+            HoursOfWork = String.Format("{0:0.##}", ((PurchaseCost*60) / (HourlyWage)/Modifier));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public void ChangeUnit(string unitType)
+        {
+            switch (unitType)
+            {
+                case "Days":
+                    Unit = "Days";
+                    Modifier = 1440;
+                    break;
+                case "Hours":
+                    Unit = "Hours";
+                    Modifier = 60;
+                    break;
+                case "Minutes":
+                    Unit = "Minutes";
+                    Modifier = 1;
+                    break;
+            }
+            NotifyPropertyChanged("");
+            CalculateHours();
+        }
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
         {

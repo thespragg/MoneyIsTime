@@ -3,7 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
-namespace MoneyIsTIme
+namespace MoneyIsTime
 {
     public partial class App : Application
     {

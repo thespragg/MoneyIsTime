@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.489
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyIsTIme.Android", "MoneyIsTIme\MoneyIsTIme.Android\MoneyIsTIme.Android.csproj", "{0D60386C-EF84-495C-ABC0-10F3F7F0AFB5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyIsTime.Android", "MoneyIsTIme\MoneyIsTIme.Android\MoneyIsTime.Android.csproj", "{0D60386C-EF84-495C-ABC0-10F3F7F0AFB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyIsTIme", "MoneyIsTIme\MoneyIsTIme\MoneyIsTIme.csproj", "{71615739-3BA8-4504-AE98-A63C0AD3EA37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MoneyIsTime", "MoneyIsTIme\MoneyIsTIme\MoneyIsTime.csproj", "{71615739-3BA8-4504-AE98-A63C0AD3EA37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
